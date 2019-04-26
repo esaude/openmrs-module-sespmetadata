@@ -9,8 +9,8 @@
 
 	<artifactId>sespmetadata-omod</artifactId>
 	<packaging>jar</packaging>
-	<name>Sespmetadata OMOD</name>
-	<description>Omod submodule for Sespmetadata</description>
+	<name>SESP Metadata OMOD</name>
+	<description>Omod submodule for SESP Metadata</description>
 
 	<dependencies>
         <dependency>

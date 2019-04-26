@@ -17,6 +17,12 @@
 
 	<url>https://wiki.openmrs.org/x/FQ4z</url>
 
+	<properties>
+        <openmrsPlatformVersion>2.1.1</openmrsPlatformVersion>
+        <metadatadeployVersion>1.11.0</metadatadeployVersion>
+        <metadatasharingVersion>1.5.0</metadatasharingVersion>
+    </properties>
+
 	<scm>
 		<connection>scm:git:git@github.com:openmrs/openmrs-module-sespmetadata.git</connection>
 		<developerConnection>scm:git:git@github.com:openmrs/openmrs-module-sespmetadata.git</developerConnection>
@@ -27,6 +33,29 @@
 		<module>api</module>
 		<module>omod</module>
 	</modules>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>metadatadeploy-api</artifactId>
+				<version>${metadatadeployVersion}</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>metadatadeploy-api-1.10</artifactId>
+				<version>${metadatadeployVersion}</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>metadatasharing-api</artifactId>
+				<version>${metadatasharingVersion}</version>
+				<scope>provided</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 	<repositories>
 		<repository>
@@ -52,7 +81,52 @@
 		</pluginRepository>
 	</pluginRepositories>
 
-    <properties>
-        <openmrsPlatformVersion>2.1.1</openmrsPlatformVersion>
-    </properties>
+	<build>
+    	<pluginManagement>
+			<plugins>
+				<!-- Code Formatting -->
+				<plugin>
+					<groupId>com.coveo</groupId>
+					<artifactId>fmt-maven-plugin</artifactId>
+					<version>2.8</version>
+					<executions>
+						<execution>
+							<goals>
+								<goal>format</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+				<plugin>
+					<groupId>com.googlecode.maven-java-formatter-plugin</groupId>
+					<artifactId>maven-java-formatter-plugin</artifactId>
+					<executions>
+						<execution>
+							<phase>none</phase>
+						</execution>
+					</executions>
+				</plugin>
+
+				<!-- Code Coverage Tool -->
+    			<plugin>
+					<groupId>org.jacoco</groupId>
+					<artifactId>jacoco-maven-plugin</artifactId>
+					<version>0.8.2</version>
+					<configuration>
+						<includes>
+							<include>org/openmrs/**</include>
+						</includes>
+					</configuration>
+					<executions>
+						<execution>
+							<id>prepare-agent</id>
+							<goals>
+								<goal>prepare-agent</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+			</plugins>	
+		</pluginManagement>
+    </build>
 </project>

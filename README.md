@@ -40,6 +40,21 @@ simply restart OpenMRS/tomcat and the module will be loaded and started.
 
 ## Metadata Implemented
 
+* Person Attributes.
+* Encounter Types.
+* Forms.
+* Locations.
+* User Roles.
+* Appointment Service list.
+* Visit Type.
+* Global Properties.
+* Address Hierarchy.
+* Concepts.
+* Patient Identifier.
+* Programs.
+* Program Work flows.
+* Program Work flow states.
+
 ## How to perform a release
 
 For more information on how to perform a release refer to this [link](https://wiki.openmrs.org/display/docs/Maven+Release+Process)

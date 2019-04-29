@@ -27,9 +27,13 @@ public class SespmetadataActivator extends BaseModuleActivator {
   public void started() {
     log.info("Started SespMetadata Module");
 
-    // Install metadata bundles
-    MetadataDeployService svc = Context.getService(MetadataDeployService.class);
-    svc.installBundles(Context.getRegisteredComponents(MetadataBundle.class));
+    // Install metadata bundles excluding depricated bundles
+    MetadataDeployService metadataDeployService = Context.getService(MetadataDeployService.class);
+    for (MetadataBundle metadataBundle : Context.getRegisteredComponents(MetadataBundle.class)) {
+      if (metadataBundle.getClass().getAnnotation(Deprecated.class) == null) {
+        metadataDeployService.installBundle(metadataBundle);
+      }
+    }
   }
 
   /** @see #stopped() */

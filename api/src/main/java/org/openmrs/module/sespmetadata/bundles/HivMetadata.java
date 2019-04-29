@@ -18,27 +18,20 @@ import org.openmrs.module.metadatadeploy.bundle.AbstractMetadataBundle;
 import org.springframework.stereotype.Component;
 
 /**
- * Common metadata bundle
+ * Hiv program metadata bundle
  * 
  * Contains:
- *  - Global Properties
- *  - Patient Identifiers
- *  - User Roles
- *  - Locations
- *  - Address Hierarchies
- *  - Programs
+ *  - Program Work flows.
+ *  - Program Work flow states.
+ *  - Concepts
+ *  - Encounter types
+ *  - Concepts
  */
 @Component
-public class CommonMetadata extends AbstractMetadataBundle {
-
-  public static class _GlobalProperties {
-    public static final GlobalProperty EXAMPLE =
-        globalProperty("sespmetadata.exampleGlobalProperty", "Example Global Property", "50");
-  }
+public class HivMetadata extends AbstractMetadataBundle {
 
   /** @see org.openmrs.module.metadatadeploy.bundle.AbstractMetadataBundle#install() */
   @Override
   public void install() {
-    install(_GlobalProperties.EXAMPLE);
   }
 }

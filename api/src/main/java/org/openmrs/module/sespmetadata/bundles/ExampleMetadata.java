@@ -14,6 +14,8 @@ package org.openmrs.module.sespmetadata.bundles;
 import static org.openmrs.module.metadatadeploy.bundle.CoreConstructors.*;
 
 import org.openmrs.module.metadatadeploy.bundle.AbstractMetadataBundle;
+import org.openmrs.module.sespmetadata.MetadataTypes.EncounterType;
+import org.openmrs.module.sespmetadata.MetadataTypes.Form;
 import org.springframework.stereotype.Component;
 
 /** Example metadata bundle */
@@ -21,18 +23,32 @@ import org.springframework.stereotype.Component;
 public class ExampleMetadata extends AbstractMetadataBundle {
 
   public static class _EncounterType {
-    public static final String EXAMPLE = "d69dedbd-3933-4e44-8292-bea939ce980a";
+    public static final EncounterType EXAMPLE =
+        new EncounterType(
+            "d69dedbd-3933-4e44-8292-bea939ce980a", "Example encounter", "Just an example");
   }
 
   public static class _Form {
-    public static final String EXAMPLE = "b694b1bc-2086-47dd-a4ad-ba48f9471e4b";
+    public static final Form EXAMPLE =
+        new Form(
+            "b694b1bc-2086-47dd-a4ad-ba48f9471e4b", "Example Form", "Just an Example form", "1.0");
   }
 
   /** @see org.openmrs.module.metadatadeploy.bundle.AbstractMetadataBundle#install() */
   @Override
   public void install() {
-    install(encounterType("Example encounter", "Just an example", _EncounterType.EXAMPLE));
+    install(
+        encounterType(
+            _EncounterType.EXAMPLE.getName(),
+            _EncounterType.EXAMPLE.getDescription(),
+            _EncounterType.EXAMPLE.getUuid()));
 
-    install(form("Example form", null, _EncounterType.EXAMPLE, "1", _Form.EXAMPLE));
+    install(
+        form(
+            _Form.EXAMPLE.getName(),
+            _Form.EXAMPLE.getDescription(),
+            _EncounterType.EXAMPLE.getUuid(),
+            _Form.EXAMPLE.getVersion(),
+            _Form.EXAMPLE.getUuid()));
   }
 }

@@ -33,9 +33,7 @@
             <ref bean="transactionManager" />
         </property>
         <property name="target">
-            <bean class="org.openmrs.module.sespmetadata.api.impl.SespmetadataServiceImpl">
-                <property name="dao" ref="sespmetadata.SespmetadataDao" />
-            </bean>
+            <bean class="org.openmrs.module.sespmetadata.api.impl.SespmetadataServiceImpl" />
         </property>
         <property name="preInterceptors">
             <ref bean="serviceInterceptors" />

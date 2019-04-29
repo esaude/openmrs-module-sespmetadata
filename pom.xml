@@ -19,9 +19,9 @@
 
 	<properties>
         <openmrsPlatformVersion>1.11.5</openmrsPlatformVersion>
-        <metadatadeployVersion>1.11.0</metadatadeployVersion>
-        <metadatasharingVersion>1.5.0</metadatasharingVersion>
-		<metadatamappingVersion>1.3.4</metadatamappingVersion>
+        <metadataDeployVersion>1.11.0</metadataDeployVersion>
+        <metadataSharingVersion>1.5.0</metadataSharingVersion>
+		<metadataMappingVersion>1.3.4</metadataMappingVersion>
     </properties>
 
 	<scm>
@@ -40,19 +40,19 @@
 			<dependency>
 				<groupId>org.openmrs.module</groupId>
 				<artifactId>metadatadeploy-api</artifactId>
-				<version>${metadatadeployVersion}</version>
+				<version>${metadataDeployVersion}</version>
 				<scope>provided</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.openmrs.module</groupId>
 				<artifactId>metadatasharing-api</artifactId>
-				<version>${metadatasharingVersion}</version>
+				<version>${metadataSharingVersion}</version>
 				<scope>provided</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.openmrs.module</groupId>
 				<artifactId>metadatamapping-api</artifactId>
-				<version>${metadatamappingVersion}</version>
+				<version>${metadataMappingVersion}</version>
 				<scope>provided</scope>
 			</dependency>
 

@@ -9,12 +9,7 @@
  */
 package org.openmrs.module.sespmetadata.api.dao;
 
-import org.openmrs.api.db.hibernate.DbSessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 @Repository("sespmetadata.SespmetadataDao")
-public class SespmetadataDao {
-
-  @Autowired DbSessionFactory sessionFactory;
-}
+public class SespmetadataDao {}

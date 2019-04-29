@@ -25,17 +25,41 @@ public class SespmetadataActivator extends BaseModuleActivator {
 
   /** @see #started() */
   public void started() {
-    log.info("Started Sespmetadata");
+    log.info("Started SespMetadata Module");
 
     // Install metadata bundles
     MetadataDeployService svc = Context.getService(MetadataDeployService.class);
     svc.installBundles(Context.getRegisteredComponents(MetadataBundle.class));
   }
 
-  /** @see #shutdown() */
-  public void shutdown() {
-    log.info("Shutdown Sespmetadata");
+  /** @see #stopped() */
+  public void stopped() {
+    log.info("Stopped SespMetadata Module");
+  }
 
-    // Uninstall metadata bundles
+  @Override
+  public void contextRefreshed() {
+    log.debug("SespMetadata Module refreshed");
+  }
+
+  @Override
+  public void willRefreshContext() {
+    log.debug("Refreshing SespMetadata Module");
+  }
+
+  @Override
+  public void willStart() {
+    log.debug("Starting SespMetadata Module");
+  }
+
+  @Override
+  public void willStop() {
+    log.debug("Stopping SespMetadata Module");
+    try {
+      // remove metadata
+      log.debug("SESP Metadata purged");
+    } catch (Exception e) {
+      log.error("An error occured trying to purge SESP Metadata", e);
+    }
   }
 }

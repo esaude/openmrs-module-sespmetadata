@@ -34,6 +34,7 @@ public class SespmetadataActivator extends BaseModuleActivator {
         metadataDeployService.installBundle(metadataBundle);
       }
     }
+    log.info("SESP Metadata Installed");
   }
 
   /** @see #stopped() */

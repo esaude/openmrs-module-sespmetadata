@@ -26,9 +26,7 @@ import org.springframework.stereotype.Component;
  *  - User Roles
  *  - Locations
  *  - Address Hierarchy
- *  - Address Hierarchies
  *  - Programs
- *  - Person Attributes
  *  - Visit Types
  */
 @Component

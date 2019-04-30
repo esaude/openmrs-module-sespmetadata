@@ -17,16 +17,15 @@ import org.openmrs.module.metadatadeploy.bundle.AbstractMetadataBundle;
 import org.springframework.stereotype.Component;
 
 /*-
- * TB program metadata bundle
+ * Clinical metadata bundle
  *
  * Contains:
- *  - Program Work flows.
- *  - Program Work flow states.
- *  - Concepts.
- *  - Encounter types.
+ *  - Global Properties
+ *  - Person Attributes
+ *  - Visit Types
  */
 @Component
-public class TbMetadata extends AbstractMetadataBundle {
+public class ClinicalMetadata extends AbstractMetadataBundle {
 
   /** @see org.openmrs.module.metadatadeploy.bundle.AbstractMetadataBundle#install() */
   @Override

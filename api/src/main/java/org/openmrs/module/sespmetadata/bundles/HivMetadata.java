@@ -24,7 +24,6 @@ import org.springframework.stereotype.Component;
  *  - Program Work flow states.
  *  - Concepts.
  *  - Encounter types.
- *  - Concepts.
  */
 @Component
 public class HivMetadata extends AbstractMetadataBundle {

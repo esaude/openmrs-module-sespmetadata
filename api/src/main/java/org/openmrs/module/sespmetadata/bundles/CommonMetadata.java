@@ -17,16 +17,19 @@ import org.openmrs.GlobalProperty;
 import org.openmrs.module.metadatadeploy.bundle.AbstractMetadataBundle;
 import org.springframework.stereotype.Component;
 
-/**
+/*-
  * Common metadata bundle
- * 
+ *
  * Contains:
  *  - Global Properties
  *  - Patient Identifiers
  *  - User Roles
  *  - Locations
+ *  - Address Hierarchy
  *  - Address Hierarchies
  *  - Programs
+ *  - Person Attributes
+ *  - Visit Types
  */
 @Component
 public class CommonMetadata extends AbstractMetadataBundle {

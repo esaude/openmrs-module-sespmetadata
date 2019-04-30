@@ -13,25 +13,23 @@ package org.openmrs.module.sespmetadata.bundles;
 
 import static org.openmrs.module.metadatadeploy.bundle.CoreConstructors.*;
 
-import org.openmrs.GlobalProperty;
 import org.openmrs.module.metadatadeploy.bundle.AbstractMetadataBundle;
 import org.springframework.stereotype.Component;
 
-/**
+/*-
  * Hiv program metadata bundle
- * 
+ *
  * Contains:
  *  - Program Work flows.
  *  - Program Work flow states.
- *  - Concepts
- *  - Encounter types
- *  - Concepts
+ *  - Concepts.
+ *  - Encounter types.
+ *  - Concepts.
  */
 @Component
 public class HivMetadata extends AbstractMetadataBundle {
 
   /** @see org.openmrs.module.metadatadeploy.bundle.AbstractMetadataBundle#install() */
   @Override
-  public void install() {
-  }
+  public void install() {}
 }

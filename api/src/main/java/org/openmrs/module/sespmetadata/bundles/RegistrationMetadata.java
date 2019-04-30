@@ -22,7 +22,6 @@ import org.springframework.stereotype.Component;
  * Contains:
  *  - Global Properties
  *  - Patient Identifiers
- *  - Address Hierarchy
  *  - Person Attributes
  *  - Visit Types
  */
